@@ -10,6 +10,14 @@ let johnBMI = johnMass / (johnHeight * johnHeight);
 
 let markHigherBMI = markBMI > johnBMI;
 
+// challenge 2
+
+if (markBMI > johnBMI) {
+    console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})`);
+} else {
+    console.log(`John's BMI is (${johnBMI}) is higher than Mark's (${markBMI})`);
+}
+// end challenge 2
 console.log(markBMI, johnBMI, markHigherBMI);
 
 // BMI = mass / height ** 2 = mass / (height * height) (mass in kg,and height in meter).
