@@ -9,6 +9,18 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function ({
+    time = "20:00",
+    starterIndex = 1,
+    mainIndex = 1,
+    address,
+  }) {
+    console.log(`
+      Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}
+      will be deliverd to ${address} at ${time}
+      `);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -24,6 +36,18 @@ const restaurant = {
     },
   },
 };
+
+restaurant.orderDelivery({
+  time: "22:30",
+  starterIndex: 2,
+  mainIndex: 2,
+  address: "Via del Sole, 21",
+});
+
+restaurant.orderDelivery({
+  address: "Via del Sole, 21",
+  starterIndex: 0,
+});
 
 const arr = [2, 3, 4];
 
@@ -45,3 +69,27 @@ console.log(i, j, k);
 const ex = [1, 2];
 const [x = 1, y = 1, z = 0] = ex;
 console.log(x, y, z);
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+let p = 111;
+let q = 999;
+const obj = { p: 22, q: 33 };
+({ p, q } = obj);
+console.log(p, q);
+
+const {
+  fri: { open: o, close: c },
+} = restaurant.openingHours;
+console.log(o, c);
