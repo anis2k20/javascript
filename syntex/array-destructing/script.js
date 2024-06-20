@@ -9,6 +9,12 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+
   orderDelivery: function ({
     time = "20:00",
     starterIndex = 1,
@@ -93,3 +99,32 @@ const {
   fri: { open: o, close: c },
 } = restaurant.openingHours;
 console.log(o, c);
+
+// spread operator----------
+const arr2 = [1, 2, 3];
+const arr3 = [4, 5, 6, ...arr2];
+console.log(...arr2, ...arr3);
+const newMenu = [...restaurant.mainMenu, "richeese"];
+console.log(...newMenu);
+
+const menus = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menus);
+
+const str = "Anis";
+const letters = [...str];
+console.log(letters);
+
+const ingridients = [
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt("Ingredient 2?"),
+  // prompt("Ingredient 3?"),
+];
+restaurant.orderPasta(...ingridients);
+// object
+const newResturant = { foundedIn: 2012, ...restaurant, founder: "Anis" };
+console.log(newResturant);
+const restaurantCopy = { ...restaurant };
+console.log(restaurantCopy);
+restaurantCopy.name = "Takeout";
+console.log(restaurant.name);
+console.log(restaurantCopy.name);
