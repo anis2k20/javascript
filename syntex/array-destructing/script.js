@@ -128,3 +128,10 @@ console.log(restaurantCopy);
 restaurantCopy.name = "Takeout";
 console.log(restaurant.name);
 console.log(restaurantCopy.name);
+
+console.log("-----Loop-----");
+
+const foodMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+for (const [index, item] of foodMenu.entries()) {
+  console.log(`${index + 1}: ${item}`);
+}
