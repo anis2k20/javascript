@@ -47,3 +47,16 @@ const restaurant = {
 console.log(restaurant.order(2, 0));
 
 console.log(restaurant);
+
+console.log(restaurant.openingHours.mon?.open);
+
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+for (const day of days) {
+  console.log(`${restaurant.openingHours[day]?.open}` ?? "closed");
+}
+
+console.log(restaurant.order?.(1, 2) ?? "order not found");
+
+const user = [{ name: "anis", age: 24, id: 3030 }];
+console.log(user[0]?.names ?? "user not found");
