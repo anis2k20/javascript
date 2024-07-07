@@ -60,3 +60,19 @@ console.log(restaurant.order?.(1, 2) ?? "order not found");
 
 const user = [{ name: "anis", age: 24, id: 3030 }];
 console.log(user[0]?.names ?? "user not found");
+console.log("---------------------object methods---------------");
+for (const day of Object.keys(openingHours)) {
+  console.log(day);
+}
+
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
