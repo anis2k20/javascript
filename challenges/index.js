@@ -92,33 +92,47 @@ const removeUnfair = gameEvents.delete(64);
 console.log(removeUnfair);
 console.log(gameEvents);
 // console.log(events);
-const time = [...gameEvents.keys()].pop();
+// const time = [...gameEvents.keys()].pop();
 
-console.log(
-  `An event happened, on average, every ${time / gameEvents.size} minutes`
-);
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`
+// );
 
-for (const [min, event] of gameEvents) {
-  const half = min <= 45 ? "First" : "Second";
-  console.log(`[${half}] ${min}: ${event}`);
-}
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? "First" : "Second";
+//   console.log(`[${half}] ${min}: ${event}`);
+// }
 
-// challenge 4
-document.body.append(document.createElement("textarea"));
-btn = document.createElement("button");
-btn.innerText = "Convert";
-document.body.append(btn);
+// // challenge 4
+// document.body.append(document.createElement("textarea"));
+// btn = document.createElement("button");
+// btn.innerText = "Convert";
+// document.body.append(btn);
 
-btn.addEventListener("click", function () {
-  const text = document.querySelector("textarea").value;
-  const rows = text.split("\n");
-  for (const r of rows) {
-    const [first, second] = r.toLocaleLowerCase().trim().split("_");
-    console.log(first, second);
-    const output = `${first}${second.replace(
-      second[0],
-      second[0].toUpperCase()
-    )}`;
-    console.log(output);
-  }
-});
+// btn.addEventListener("click", function () {
+//   const text = document.querySelector("textarea").value;
+//   const rows = text.split("\n");
+//   for (const r of rows) {
+//     const [first, second] = r.toLocaleLowerCase().trim().split("_");
+//     console.log(first, second);
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase()
+//     )}`;
+//     console.log(output);
+// //   }
+// });
+
+// challenge 5
+const poll = {
+  question: "What is your favourite programming language?",
+  options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
+  // This generates [0, 0, 0, 0]. More in the next section!
+  answers: new Array(4).fill(0),
+  registerNewAnswer() {
+    const ans = prompt(`${this.question}\n${this.options.join("\n")}`);
+    console.log(ans);
+  },
+};
+
+poll.registerNewAnswer();
