@@ -102,3 +102,23 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? "First" : "Second";
   console.log(`[${half}] ${min}: ${event}`);
 }
+
+// challenge 4
+document.body.append(document.createElement("textarea"));
+btn = document.createElement("button");
+btn.innerText = "Convert";
+document.body.append(btn);
+
+btn.addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+  const rows = text.split("\n");
+  for (const r of rows) {
+    const [first, second] = r.toLocaleLowerCase().trim().split("_");
+    console.log(first, second);
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(output);
+  }
+});
