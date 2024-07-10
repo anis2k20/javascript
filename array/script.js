@@ -89,3 +89,26 @@ console.log(arr2.reverse());
 console.log([...arr, ...arr2]);
 const letter = ["a", "b", "c", "d", "e"];
 console.log(letter.join("-"));
+
+console.log(arr.splice(-1)[0]);
+console.log(arr.at(-1));
+
+movements.forEach(function (mov, i, arr) {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+});
+// foreach in Map
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+const deposit = movements.filter(function (mov) {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+});
