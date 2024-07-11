@@ -123,3 +123,32 @@ const blance2 = movements.reduce((acc, cur, i, arr) => {
 }, 190);
 
 console.log(blance2);
+
+const account = accounts.find((acc) => acc.owner === "Jessica Davis");
+console.log(account);
+// find index
+const arr3 = [1, 2, 3, 4, 5, 5, 184, 3, 44, 344];
+// const largeNumber = (large) => large > 185;
+
+console.log(arr3.findIndex((l) => l > 186));
+
+const arr4 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+console.log(arr4.flat());
+
+// console.log(movements.sort());
+console.log(movements);
+const movements2 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+movements2.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
+console.log(movements2);
+
+const arr5 = new Array(5);
+arr5.fill(1, 2, 4);
+console.log(arr5);

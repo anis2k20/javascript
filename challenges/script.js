@@ -273,3 +273,34 @@ const calcAverageHumanAges = (ages) => {
 const avg = calcAverageHumanAges([5, 2, 4, 1, 15, 8, 3]);
 
 console.log(avg);
+
+// chanlleng 4 on array
+const dogs = [
+  { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
+  { weight: 8, curFood: 200, owners: ["Matilda"] },
+  { weight: 13, curFood: 275, owners: ["Sarah", "John"] },
+  { weight: 32, curFood: 340, owners: ["Michael"] },
+];
+
+// 1. Loop over the array containing dog objects, and for each dog, calculate
+// the recommended food portion. Save the result to a variable
+// (let portion = ...).
+dogs.forEach((dog) => {
+  dog.recFood = Math.trunc(dog.weight ** 0.75 * 28);
+});
+console.log(dogs);
+const sarahDog = dogs.findIndex((dog) => dog.owners.includes("Sarah"));
+dogs.map((dog) => {
+  if (dog.owners.includes("Sarah") && dog.curFood > dog.recFood) {
+    console.log(`Sarah's dog is eating too much`);
+  }
+});
+
+const ownerEatTooMuch = dogs.filter((dog) => {
+  if (dog.curFood > dog.recFood) {
+    return dog.owners;
+    flatMap((dog) => dog.owners);
+  }
+});
+
+console.log(ownerEatTooMuch);
