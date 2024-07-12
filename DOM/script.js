@@ -41,3 +41,15 @@ message.innerHTML =
   "We use cookies for improved functionality and analytics. <button class='btn btn--close-cookie'>Got it!</button>";
 
 header.prepend(message);
+
+message.style.backgroundColor = "#373a47";
+message.style.padding = "10px";
+message.style.width = "120%";
+
+const twitterLink = document.querySelector(".twitter-link");
+console.log(twitterLink.getAttribute("href"));
+
+message.classList.add("slide-in");
+message.classList.remove("slide-in");
+message.classList.toggle("slide-in");
+message.classList.contains("slide-in");
