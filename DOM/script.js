@@ -53,3 +53,30 @@ message.classList.add("slide-in");
 message.classList.remove("slide-in");
 message.classList.toggle("slide-in");
 message.classList.contains("slide-in");
+
+// const h1 = document.querySelector("h1");
+// h1.addEventListener("mouseenter", function (e) {
+//   alert("h1");
+// });
+
+// const alertH1 = function (e) {
+//   alert("h1");
+// };
+
+setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
+
+// document.querySelectorAll(".nav__link").forEach(function (el) {
+//   el.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute("href");
+//     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+//   });
+// });
+
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
+});
