@@ -92,9 +92,9 @@ h1.lastElementChild.style.color = "orangered";
 console.log(h1.parentNode);
 console.log(h1.parentElement);
 
-h1.closest("header").style.background = "var(--gradient-secondary)";
+// h1.closest("header").style.background = "var(--gradient-secondary)";
 
-h1.closest("h1").style.background = "var(--gradient-primary)";
+// h1.closest("h1").style.background = "var(--gradient-primary)";
 
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
@@ -147,3 +147,17 @@ const handleHover = function (e) {
 // });
 nav.addEventListener("mouseover", handleHover.bind(0.5));
 nav.addEventListener("mouseout", handleHover.bind(1));
+
+// sticky navigation
+const section1 = document.querySelector("#section--1");
+const initialCords = section1.getBoundingClientRect();
+console.log(initialCords);
+
+window.addEventListener("scroll", function () {
+  // console.log(window.scrollY);
+  if (window.scrollY > initialCords.top) {
+    nav.classList.add("sticky");
+  } else {
+    nav.classList.remove("sticky");
+  }
+});
