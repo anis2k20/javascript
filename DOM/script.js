@@ -161,3 +161,6 @@ window.addEventListener("scroll", function () {
     nav.classList.remove("sticky");
   }
 });
+// leazy loading
+const imgTargets = document.querySelectorAll("img[data-src]");
+console.log(imgTargets);
