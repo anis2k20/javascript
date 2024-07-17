@@ -28,3 +28,30 @@ console.log(arr.__proto__);
 console.log(arr.__proto__ === Array.prototype);
 console.log(arr.__proto__.__proto__ === Object.prototype);
 console.dir((x) => x + 1);
+
+// Class
+// const PersonCl = class {};
+
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+}
+
+const jassica = new PersonCl("Jassica", 1990);
+console.log(jassica);
+
+jassica.calcAge();
+
+console.log(jassica.__proto__ === PersonCl.prototype);
+
+PersonCl.prototype.greet = function () {
+  console.log(`Hey ${this.firstName}, welcome`);
+};
+
+jassica.greet();
