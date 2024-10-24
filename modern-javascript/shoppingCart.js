@@ -1,4 +1,9 @@
 const cart = [];
+console.log("fetching usre...");
+
+await fetch("https://jsonplaceholder.typicode.com/users");
+
+console.log("user fetched...");
 
 export const addToCart = function (product, quantity) {
   cart.push({ product, quantity });
